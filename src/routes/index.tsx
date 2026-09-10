@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useMemo, useState } from "react";
-import { Calendar, CheckCircle2, Circle, Clock, Plus, Trash2 } from "lucide-react";
+import { Calendar, CheckCircle2, Circle, Clock, ListTodo, Plus, Trash2 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
