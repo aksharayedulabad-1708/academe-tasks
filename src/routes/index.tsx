@@ -142,7 +142,7 @@ function StudentTaskTracker() {
 
         <div className="grid gap-4 sm:grid-cols-3">
           <SummaryCard
-            icon={<BookOpen className="h-4 w-4" />}
+            icon={<ChecklistIcon className="h-4 w-4" />}
             label="Total Tasks"
             value={total}
             color="primary"
