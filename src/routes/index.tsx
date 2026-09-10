@@ -127,9 +127,11 @@ function StudentTaskTracker() {
     <div className="min-h-screen bg-background px-4 py-8 md:py-12">
       <div className="mx-auto max-w-2xl space-y-8">
         <div className="text-center">
-          <div className="mb-3 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10">
-            <BookOpen className="h-6 w-6 text-primary" />
-          </div>
+          <img
+            src={logoAsset.url}
+            alt="Student Task Tracker"
+            className="mx-auto mb-3 h-20 w-20 rounded-2xl object-contain"
+          />
           <h1 className="text-3xl font-bold tracking-tight text-foreground md:text-4xl">
             Student Task Tracker
           </h1>
