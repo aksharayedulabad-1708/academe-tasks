@@ -142,7 +142,7 @@ function StudentTaskTracker() {
 
         <div className="grid gap-4 sm:grid-cols-3">
           <SummaryCard
-            icon={<ChecklistIcon className="h-4 w-4" />}
+            icon={<ListTodo className="h-4 w-4" />}
             label="Total Tasks"
             value={total}
             color="primary"
@@ -317,12 +317,12 @@ function EmptyState({ filter }: { filter: Filter }) {
     all: {
       title: "No tasks yet",
       description: "Add your first task above and start making progress.",
-      icon: <BookOpen className="h-8 w-8 text-muted-foreground" />,
+      icon: <ListTodo className="h-8 w-8 text-muted-foreground" />,
     },
     pending: {
       title: "All caught up!",
       description: "You have no pending tasks. Great job!",
-      icon: <CheckCircle2 className="h-8 w-8 text-emerald-500" />,
+      icon: <CheckCircle2 className="h-8 w-8 text-success" />,
     },
     completed: {
       title: "No completed tasks",
