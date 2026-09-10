@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useMemo, useState } from "react";
-import { BookOpen, Calendar, CheckCircle2, Circle, Clock, Plus, Trash2 } from "lucide-react";
+import { Calendar, CheckCircle2, Circle, Clock, ListTodo, Plus, Trash2 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -8,6 +8,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { cn } from "@/lib/utils";
+import logoAsset from "@/assets/logo.png.asset.json";
 
 type Task = {
   id: string;
@@ -126,9 +127,11 @@ function StudentTaskTracker() {
     <div className="min-h-screen bg-background px-4 py-8 md:py-12">
       <div className="mx-auto max-w-2xl space-y-8">
         <div className="text-center">
-          <div className="mb-3 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10">
-            <BookOpen className="h-6 w-6 text-primary" />
-          </div>
+          <img
+            src={logoAsset.url}
+            alt="Student Task Tracker"
+            className="mx-auto mb-3 h-20 w-20 rounded-2xl object-contain"
+          />
           <h1 className="text-3xl font-bold tracking-tight text-foreground md:text-4xl">
             Student Task Tracker
           </h1>
@@ -139,7 +142,7 @@ function StudentTaskTracker() {
 
         <div className="grid gap-4 sm:grid-cols-3">
           <SummaryCard
-            icon={<BookOpen className="h-4 w-4" />}
+            icon={<ListTodo className="h-4 w-4" />}
             label="Total Tasks"
             value={total}
             color="primary"
@@ -290,8 +293,8 @@ function SummaryCard({
 }) {
   const colorClasses = {
     primary: "bg-primary/10 text-primary",
-    success: "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400",
-    warning: "bg-amber-500/10 text-amber-600 dark:text-amber-400",
+    success: "bg-success/15 text-success",
+    warning: "bg-warning/20 text-warning-foreground",
   };
 
   return (
@@ -314,12 +317,12 @@ function EmptyState({ filter }: { filter: Filter }) {
     all: {
       title: "No tasks yet",
       description: "Add your first task above and start making progress.",
-      icon: <BookOpen className="h-8 w-8 text-muted-foreground" />,
+      icon: <ListTodo className="h-8 w-8 text-muted-foreground" />,
     },
     pending: {
       title: "All caught up!",
       description: "You have no pending tasks. Great job!",
-      icon: <CheckCircle2 className="h-8 w-8 text-emerald-500" />,
+      icon: <CheckCircle2 className="h-8 w-8 text-success" />,
     },
     completed: {
       title: "No completed tasks",
